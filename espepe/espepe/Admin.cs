@@ -29,7 +29,7 @@ namespace espepe
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Admin_Load(object sender, EventArgs e)
@@ -37,6 +37,18 @@ namespace espepe
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel2.BackColor = Color.FromArgb(100, 0, 0, 0);
             panel3.BackColor = Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ManageSiswa().Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ManageKelas().Show();
         }
     }
 }

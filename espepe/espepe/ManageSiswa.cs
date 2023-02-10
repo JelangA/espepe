@@ -1,48 +1,26 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace espepe
 {
-    public partial class ManageKelas : Form
+    public partial class ManageSiswa : Form
     {
         private DataSet ds;
         private MySqlCommand cmd;
-        private MySqlDataReader rd;
         private MySqlDataAdapter da;
+        private MySqlDataReader rd;
 
         Koneksi koneksi = new Koneksi();
-        public ManageKelas()
+
+        public ManageSiswa()
         {
             InitializeComponent();
-        }
-        void bersih()
-        {
-            textBox1.Text = "";
-            txtkelas.Text = "";
-            cmbtingkat.Text = "";
-            tampilData();
-            cmbJurusan();
-            cmbTingkats();
-        }
-        void tampilData()
-        {
-            MySqlConnection conn = koneksi.getKon();
-            conn.Open();
-            try
-            {
-                cmd = new MySqlCommand("select * from kelas", conn);
-                ds = new DataSet();
-                da = new MySqlDataAdapter(cmd);
-                da.Fill(ds, "kelas");
-                dataGridView1.DataSource = ds;
-                dataGridView1.DataMember = "kelas";
-            }catch (Exception x)
-            {
-                MessageBox.Show(x.ToString());
-            }
-            conn.Close();
         }
 
         void cmbJurusan()
@@ -53,12 +31,12 @@ namespace espepe
             try
 
             {
-                cmd = new MySqlCommand("select * from tjurusan", conn);
+                cmd = new MySqlCommand("select * from kelas", conn);
                 rd = cmd.ExecuteReader();
                 while (rd.Read())
                 {
-                    string sName = rd.GetString(0);
-                    cmbjurusan.Items.Add(sName);
+                    string sName = rd.GetString(1);
+                    cmbKls.Items.Add(sName);
                 }
             }
             catch (Exception g)
@@ -70,32 +48,38 @@ namespace espepe
 
         }
 
-        void cmbTingkats()
+        void bersih()
         {
-            //get data IdOrder from database to combobox1 
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            cmbKls.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            textBox7.Text = "";
+            tampilData();
+            cmbJurusan();
+        }
+        void tampilData()
+        {
             MySqlConnection conn = koneksi.getKon();
             conn.Open();
             try
-
             {
-                cmd = new MySqlCommand("select * from ttingkat", conn);
-                rd = cmd.ExecuteReader();
-                while (rd.Read())
-                {
-                    string sName = rd.GetString(0);
-                    cmbtingkat.Items.Add(sName);
-                }
+                cmd = new MySqlCommand("select * from siswa", conn);
+                ds = new DataSet();
+                da = new MySqlDataAdapter(cmd);
+                da.Fill(ds, "siswa");
+                dataGridView1.DataSource = ds;
+                dataGridView1.DataMember = "siswa";
             }
-            catch (Exception g)
+            catch (Exception x)
             {
-                MessageBox.Show(g.Message);
+                MessageBox.Show(x.ToString());
             }
             conn.Close();
-            rd.Close();
-
         }
-
-        private void ManageKelas_Load(object sender, EventArgs e)
+        private void ManageSiswa_Load(object sender, EventArgs e)
         {
             bersih();
         }
@@ -106,11 +90,14 @@ namespace espepe
             conn.Open();
             try
             {
-                cmd = new MySqlCommand("insert into kelas values('" +
-                           textBox1.Text + "','" +
-                           txtkelas.Text + "','" +
-                           cmbtingkat.Text + "','" +
-                           cmbjurusan.Text + "')", conn);
+                cmd = new MySqlCommand("insert into siswa values('" +
+                    textBox1.Text + "','" +
+                    textBox2.Text + "','" +
+                    textBox3.Text + "','" +
+                    cmbKls.Text + "','" +
+                    textBox5.Text + "','" +
+                    textBox6.Text + "','" +
+                    textBox7.Text + "')", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("berhasil di simpan");
                 bersih();
@@ -121,27 +108,19 @@ namespace espepe
             }
             conn.Close();
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            new Admin().Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            bersih();
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             MySqlConnection conn = koneksi.getKon();
             conn.Open();
             try
             {
-                cmd = new MySqlCommand("UPDATE kelas SET jurusan='" +
-                    txtkelas.Text + "',kelas='" +
-                    cmbtingkat.Text + "'where id_kelas='" +
+                cmd = new MySqlCommand("UPDATE siswa SET nis='" +
+                    textBox2.Text + "',nama='" +
+                    textBox3.Text + "',id_kelas='" +
+                    cmbKls.Text + "',alamat='" +
+                    textBox5.Text + "',no_telpon='" +
+                    textBox6.Text + "',id_spp='" +
+                    textBox7.Text + "'where nisn='" +
                     textBox1.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("berhasil di simpan");
@@ -153,14 +132,13 @@ namespace espepe
             }
             conn.Close();
         }
-
         private void button3_Click(object sender, EventArgs e)
         {
             MySqlConnection conn = koneksi.getKon();
             conn.Open();
             try
             {
-                cmd = new MySqlCommand("delete from kelas where id_kelas='" +
+                cmd = new MySqlCommand("delete from siswa where nisn='" +
                     textBox1.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("berhasil di simpan");
@@ -172,15 +150,23 @@ namespace espepe
             }
             conn.Close();
         }
+        private void Back_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Admin().Show();
+        }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
             textBox1.Text = row.Cells[0].Value.ToString();
-            txtkelas.Text = row.Cells[1].Value.ToString();
-            cmbtingkat.Text = row.Cells[2].Value.ToString();
-        }
+            textBox2.Text = row.Cells[1].Value.ToString();
+            textBox3.Text = row.Cells[2].Value.ToString();
+            cmbKls.Text = row.Cells[3].Value.ToString();
+            textBox5.Text = row.Cells[4].Value.ToString();
+            textBox6.Text = row.Cells[5].Value.ToString();
+            textBox7.Text = row.Cells[6].Value.ToString();
 
-      
+        }
     }
 }

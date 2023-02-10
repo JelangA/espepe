@@ -70,7 +70,7 @@ namespace espepe
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(67, 110);
+            this.label2.Location = new System.Drawing.Point(63, 110);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 15);
             this.label2.TabIndex = 2;
@@ -79,7 +79,7 @@ namespace espepe
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 158);
+            this.label3.Location = new System.Drawing.Point(67, 153);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 15);
             this.label3.TabIndex = 3;
@@ -88,7 +88,7 @@ namespace espepe
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(413, 57);
+            this.label4.Location = new System.Drawing.Point(413, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 15);
             this.label4.TabIndex = 4;
@@ -97,7 +97,7 @@ namespace espepe
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(413, 99);
+            this.label5.Location = new System.Drawing.Point(437, 102);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 15);
             this.label5.TabIndex = 5;
@@ -163,11 +163,11 @@ namespace espepe
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(33, 13);
+            this.button4.Location = new System.Drawing.Point(33, 21);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 10;
-            this.button4.Text = "Back";
+            this.button4.Text = "<==";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 

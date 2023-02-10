@@ -29,3 +29,5 @@ D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.pdb
 D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.genruntimeconfig.cache
 D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.ManagePetugas.resources
 D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.Properties.Resources.resources
+D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.ManageSiswa.resources
+D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.TInkgatJurusan.resources

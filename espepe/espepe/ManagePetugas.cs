@@ -12,7 +12,7 @@ namespace espepe
     public partial class ManagePetugas : Form
     {
         private DataSet ds;
-        private MySqlDataReader rd;
+        //private MySqlDataReader rd;
         private MySqlDataAdapter da;
         private MySqlCommand cmd;
 
