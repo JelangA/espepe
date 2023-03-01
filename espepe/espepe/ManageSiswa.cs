@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using DGVPrinterHelper;
 
 namespace espepe
 {
@@ -48,17 +49,42 @@ namespace espepe
 
         }
 
+        void cmbSpp()
+        {
+            //get data IdOrder from database to combobox1 
+            MySqlConnection conn = koneksi.getKon();
+            conn.Open();
+            try
+
+            {
+                cmd = new MySqlCommand("select * from spp", conn);
+                rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    string sName = rd.GetString(1);
+                    cmbSPP.Items.Add(sName);
+                }
+            }
+            catch (Exception g)
+            {
+                MessageBox.Show(g.Message);
+            }
+            conn.Close();
+            rd.Close();
+
+        }
+
         void bersih()
         {
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
-            cmbKls.Text = "";
+            cmbKls.Text = "Pilih Kelas";
             textBox5.Text = "";
             textBox6.Text = "";
-            textBox7.Text = "";
+            cmbSPP.Text = "Pilih SPP";
             tampilData();
-            cmbJurusan();
+            
         }
         void tampilData()
         {
@@ -82,6 +108,8 @@ namespace espepe
         private void ManageSiswa_Load(object sender, EventArgs e)
         {
             bersih();
+            cmbJurusan();
+            cmbSpp();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,7 +125,7 @@ namespace espepe
                     cmbKls.Text + "','" +
                     textBox5.Text + "','" +
                     textBox6.Text + "','" +
-                    textBox7.Text + "')", conn);
+                    cmbSPP.Text + "')", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("berhasil di simpan");
                 bersih();
@@ -120,7 +148,7 @@ namespace espepe
                     cmbKls.Text + "',alamat='" +
                     textBox5.Text + "',no_telpon='" +
                     textBox6.Text + "',id_spp='" +
-                    textBox7.Text + "'where nisn='" +
+                    cmbSPP.Text + "'where nisn='" +
                     textBox1.Text + "'", conn);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("berhasil di simpan");
@@ -165,8 +193,14 @@ namespace espepe
             cmbKls.Text = row.Cells[3].Value.ToString();
             textBox5.Text = row.Cells[4].Value.ToString();
             textBox6.Text = row.Cells[5].Value.ToString();
-            textBox7.Text = row.Cells[6].Value.ToString();
+            cmbSPP.Text = row.Cells[6].Value.ToString();
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.PrintPreviewDataGridView(dataGridView1);
         }
     }
 }

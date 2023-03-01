@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using DGVPrinterHelper;
 
 namespace espepe
 {
@@ -47,8 +48,8 @@ namespace espepe
             txtId.Text = "";
             txtUsername.Text = "";
             txtPassword.Text = "";
-            txtLevel.Text = "";
             txtNama.Text = "";
+            
             tampilData();
         }
 
@@ -137,6 +138,12 @@ namespace espepe
         {
             this.Hide();
             new Admin().Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.PrintPreviewDataGridView(dataGridView1);
         }
     }
 }

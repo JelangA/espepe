@@ -2,6 +2,7 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
+using DGVPrinterHelper;
 
 namespace espepe
 {
@@ -21,10 +22,10 @@ namespace espepe
         {
             textBox1.Text = "";
             txtkelas.Text = "";
-            cmbtingkat.Text = "";
+            cmbjurusan.Text = "pilih Jurusan";
+            cmbtingkat.Text = "pilih Tingkat";
             tampilData();
-            cmbJurusan();
-            cmbTingkats();
+            
         }
         void tampilData()
         {
@@ -98,6 +99,8 @@ namespace espepe
         private void ManageKelas_Load(object sender, EventArgs e)
         {
             bersih();
+            cmbJurusan();
+            cmbTingkats();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -125,7 +128,7 @@ namespace espepe
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new Admin().Show();
+            new TInkgatJurusan().Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -181,6 +184,16 @@ namespace espepe
             cmbtingkat.Text = row.Cells[2].Value.ToString();
         }
 
-      
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Admin().Show();
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.PrintPreviewDataGridView(dataGridView1);
+        }
     }
 }

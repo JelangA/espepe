@@ -14,7 +14,6 @@ D:\jelang RPL\desktop\espepe\espepe\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4
 D:\jelang RPL\desktop\espepe\espepe\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
 D:\jelang RPL\desktop\espepe\espepe\bin\Debug\netcoreapp3.1\MySql.Data.xml
 D:\jelang RPL\desktop\espepe\espepe\bin\Debug\netcoreapp3.1\MySql.Web.xml
-D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.csproj.AssemblyReference.cache
 D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.Admin.resources
 D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.Login.resources
 D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.ManageKelas.resources
@@ -31,3 +30,8 @@ D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.ManagePetugas
 D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.Properties.Resources.resources
 D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.ManageSiswa.resources
 D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.TInkgatJurusan.resources
+D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.Pembayaran.resources
+D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.SPP.resources
+D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.Report.resources
+D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.csproj.AssemblyReference.cache
+D:\jelang RPL\desktop\espepe\espepe\obj\Debug\netcoreapp3.1\espepe.Siswa.resources

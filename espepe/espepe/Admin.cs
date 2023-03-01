@@ -10,10 +10,17 @@ namespace espepe
 {
     public partial class Admin : Form
     {
-        public Admin()
+        public static Admin aidi;
+        
+
+        public Admin(/*String value*/)
         {
             InitializeComponent();
+            aidi = this;
+         
         }
+
+        geter Geter = new geter();
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -49,6 +56,29 @@ namespace espepe
         {
             this.Hide();
             new ManageKelas().Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new SPP().Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Pembayaran().Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new Report().Show();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(" id =" + Geter.aidi);
         }
     }
 }

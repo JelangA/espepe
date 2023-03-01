@@ -47,8 +47,9 @@ namespace espepe
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.cmbKls = new System.Windows.Forms.ComboBox();
+            this.cmbSPP = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,9 +65,9 @@ namespace espepe
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(595, 178);
+            this.button3.Location = new System.Drawing.Point(589, 174);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(75, 31);
             this.button3.TabIndex = 15;
             this.button3.Text = "Delete";
             this.button3.UseVisualStyleBackColor = true;
@@ -74,9 +75,9 @@ namespace espepe
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(496, 182);
+            this.button2.Location = new System.Drawing.Point(492, 174);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(75, 31);
             this.button2.TabIndex = 16;
             this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = true;
@@ -84,9 +85,9 @@ namespace espepe
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(402, 182);
+            this.button1.Location = new System.Drawing.Point(402, 176);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 29);
             this.button1.TabIndex = 17;
             this.button1.Text = "Input";
             this.button1.UseVisualStyleBackColor = true;
@@ -210,13 +211,6 @@ namespace espepe
             this.textBox6.Size = new System.Drawing.Size(162, 23);
             this.textBox6.TabIndex = 7;
             // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(555, 130);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(162, 23);
-            this.textBox7.TabIndex = 7;
-            // 
             // cmbKls
             // 
             this.cmbKls.FormattingEnabled = true;
@@ -225,11 +219,31 @@ namespace espepe
             this.cmbKls.Size = new System.Drawing.Size(185, 23);
             this.cmbKls.TabIndex = 19;
             // 
+            // cmbSPP
+            // 
+            this.cmbSPP.FormattingEnabled = true;
+            this.cmbSPP.Location = new System.Drawing.Point(555, 133);
+            this.cmbSPP.Name = "cmbSPP";
+            this.cmbSPP.Size = new System.Drawing.Size(183, 23);
+            this.cmbSPP.TabIndex = 20;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(687, 176);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(80, 29);
+            this.button4.TabIndex = 21;
+            this.button4.Text = "Print";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // ManageSiswa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.cmbSPP);
             this.Controls.Add(this.cmbKls);
             this.Controls.Add(this.Back);
             this.Controls.Add(this.button3);
@@ -243,7 +257,6 @@ namespace espepe
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox3);
@@ -280,7 +293,8 @@ namespace espepe
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.ComboBox cmbKls;
+        private System.Windows.Forms.ComboBox cmbSPP;
+        private System.Windows.Forms.Button button4;
     }
 }

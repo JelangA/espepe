@@ -19,6 +19,12 @@
     <Compile Update="Pembayaran.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Siswa.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="SPP.cs">
       <SubType>Form</SubType>
     </Compile>
